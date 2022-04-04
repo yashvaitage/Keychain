@@ -25,6 +25,8 @@ class KeychainViewController: UIViewController {
         let passwordCheck = pswdTxtFld.text
         
         if passwordCheck == password{
+            lblMsgPrint.text = "Login Success"
+            lblMsgPrint.textColor = .systemGreen
             self.performSegue(withIdentifier: "login", sender: (Any).self)
         }else{
             lblMsgPrint.text = "Password Incorrect"
@@ -33,7 +35,9 @@ class KeychainViewController: UIViewController {
     }
     
     @IBAction func addPasswordBtnPressed(_ sender: Any) {
+        
         self.performSegue(withIdentifier: "addPassword", sender: (Any).self)
+        
        
 //        let addPsswordVC = AddPasswordViewController(nibName: nil, bundle: nil)
 //        self.navigationController?.pushViewController(addPsswordVC, animated: true)
